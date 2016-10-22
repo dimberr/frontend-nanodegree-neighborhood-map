@@ -4,5 +4,5 @@ This site was developed after [Intro to Ajax](https://www.udacity.com/course/int
 
 It is a single-page application featuring a map and some places to visit using Google Map API. Also was added additional functionality to this application, including: map markers to identify this locations, a filter function to easily discover nearest Caffe's, Shops, sights and another attraction near the chosen place. [Foursquare](https://foursquare.com) API was used to  provide that additional information about each of these locations. All background for this project was done with Knockout.JS framework in order to split View and Model functionality (MV*).
 
-You can check the project [here]() or simply donwload ZIP file and run index.html
+You can check the project [here](https://dimberr.github.io/frontend-nanodegree-neighborhood-map/) or simply donwload ZIP file and run index.html
 
