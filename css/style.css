@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Calibri', 'Helvetica', sans-serif;
+    font-size: 16px;
+    background: #000;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+#map-wrapper {
+    height: 45vh;
+    width: 100%;
+    background: #222a31;
+}
+
+#map {
+    height: 100%;
+}
+
+#info {
+    position: relative;
+    width: 100%;
+    height: 55vh;
+    background-color: #222a31;
+    overflow-y: auto;
+}
+
+#photos {
+    margin: auto;
+}
+
+#foursq {
+    max-height: 100%;
+    margin: 0;
+    padding: 0 0 15px 5px;
+    list-style: none;
+    color:#888;
+    text-align: center;
+}
+
+.place {
+    position: relative;
+    padding: 0 37px 0 0;
+    text-align: left;
+}
+
+.place-link {
+    display: inline-block;
+    color: #d5770c;
+    text-decoration: none;
+    padding: 10px 5px;
+    border-radius: 4px;
+    transition: background 0.3s ease-in-out;
+}
+
+.place-link:hover {
+    background: rgba(213, 119, 12, 0.3);
+}
+
+.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.list {
+    padding: 5px;
+    margin: 0;
+    overflow: hidden;
+}
+
+.default-place {
+    display: none;
+    float: left;
+    clear: both;
+    padding: 10px 5px;
+    background: transparent;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    color: #b9c1d6;
+    border-radius: 4px;
+}
+
+.default-place:not(.nohover):hover {
+    background: #aaa;
+    color: #222a31;
+}
+
+.desc {
+  font-family: 'Calibri', 'Helvetica', sans-serif !important;
+  font-size: 16px !important;
+  background: #222a31 !important;
+  cursor: default;
+}
+
+.reset {
+    display: none;
+    position: absolute;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    line-height: 35px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #d5770c;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+}
+
+.reset:hover {
+    color: #eb8a1c;
+}
+
+
+.filters {
+    display: none;
+    justify-content: center;
+    padding: 0;
+}
+
+.filter {
+    font-weight: bold;
+    font-size: 16px;
+    color: #b9c1d6;
+    border-radius: 4px;
+    display: inherit;
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.filter:hover {
+    color: #222a31;
+    background: #aaa;
+}
+
+.active {
+    color: #222a31;
+    background: #888;
+    display: inline-block;
+}
+
+.visible {
+    display: inline-block;
+}
+
+@media screen and (min-width:700px) {
+  #info, #map-wrapper  {
+    height: 100vh;
+  }
+  #map-wrapper {
+    float: right;
+    width: calc(100% - 300px);
+  }
+  #info {
+    float: left;
+    width: 300px;
+  }
+}
+
+@media screen and (min-width:1280px) {
+  #map-wrapper {
+    float: right;
+    width: calc(100% - 500px);
+  }
+  #info {
+    float: left;
+    width: 500px;
+    padding: 10px;
+  }
+}
