@@ -33,7 +33,6 @@ img {
     font-size: 20px;
     color: #d5770c;
     font-weight: bold;
-    padding: 10px 10px 30px 10px;
 }
 
 .info {
@@ -46,6 +45,7 @@ img {
 
 .photos {
     margin: auto;
+    padding: 0 0 20px 0;
 }
 
 #foursq {
