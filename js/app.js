@@ -330,6 +330,7 @@ function ViewModel() {
 
 
             var runs = 0;
+            var errors = 0;
 
             for (var i = 1; i < self.filters().length; i++) {
                 var newUrl = url + '&section=' + self.filters()[i];
@@ -359,7 +360,10 @@ function ViewModel() {
                         }
                     })
                     .fail(function(data) {
-                        alert("error:" + data);
+                        if (errors === 0) {  //show error only once
+                          errors++;
+                            alert("error: Failed load data from Foursquare");
+                        }
                     });
             }
         };

@@ -3,8 +3,8 @@
 
 <head>
     <title>7 Places To Go Before You Die</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,11 +12,11 @@
 <body>
     <div class="container">
 
-        <section class="map-wrapper">
+        <main class="map-wrapper">
             <div id="map"></div>
-        </section>
+        </main>
 
-        <section class="info">
+        <aside class="info">
             <div class="main-info" data-bind="text: self.showDesc() ? '' : 'Life is short, and this world is beautiful. So in the time we have allotted to us, it is important to find places that take our breath away, that leave us speechless and unable to do anything except bask in the vastness that is our existence. For Life is short and this world is beautiful.'"></div>
             <div class="reset" data-bind="click: self.reset, attr: { class: self.showDesc() === true ? 'reset visible' : 'reset'}">&#8592;</div>
 
@@ -31,7 +31,7 @@
                 <li data-bind="html: $data.html, click: markerClick.bind(this, $data), attr: {class: ($data.filter === currentFilter() || currentFilter() === 'All') ? '' : ' hidden'}"></li>
             </ul>
 
-        </section>
+        </aside>
 
     </div>
     <script src="js/knockout-3.4.0.js"></script>
