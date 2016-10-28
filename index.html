@@ -11,20 +11,28 @@
 
 <body>
     <div class="container">
-        <section id="map-wrapper">
+
+        <section class="map-wrapper">
             <div id="map"></div>
         </section>
-        <section id="info">
-            <div class="reset" data-bind="click: self.reset, attr: { class: self.visible() === true ? 'reset visible' : 'reset'}">&#8592;</div>
+
+        <section class="info">
+            <div class="main-info" data-bind="text: self.showDesc() ? '' : 'Life is short, and this world is beautiful. So in the time we have allotted to us, it is important to find places that take our breath away, that leave us speechless and unable to do anything except bask in the vastness that is our existence. For Life is short and this world is beautiful.'"></div>
+            <div class="reset" data-bind="click: self.reset, attr: { class: self.showDesc() === true ? 'reset visible' : 'reset'}">&#8592;</div>
+
             <ul class="list" data-bind="foreach: locations">
-                <li class="default-place" data-bind="html: self.showDesc() === false ? $data.name : $data.description, click: function() {getInfo($data.location, $index())}, attr: { class: self.descArr()[$index()] === true ? 'default-place visible' : 'default-place'}, css: self.descClass"></li>
+                <li class="default-place" data-bind="html: self.showDesc() === false ? $data.name : $data.description, click: function() {getInfo($data.location, $index())}, attr: { class: !self.showDesc() || (self.placeIndex() === $index()) ? (self.showDesc() ? 'default-place nohover visible' : 'default-place visible') : 'default-place'}"></li>
             </ul>
-            <div id="photos" data-bind="html: photos()"></div>
-            <ul class="filters" data-bind="foreach: filters, attr: { class: self.visible() === true ? 'filters visible' : 'filters'}">
-                <li class="filter" data-bind="text: $data.name, click: function() {updateFilters($data.filter, $index())}, attr: { class: self.filtersArr()[$index()] === true ? 'filter active' : 'filter'}"></li>
+
+            <div class="photos" data-bind="html: photos()"></div>
+            <select data-bind="options: filters, value: currentFilter, attr: { class: self.showDesc() === true ? 'filters visible' : 'filters'}"></select>
+
+            <ul id="foursq" data-bind="foreach: self.nearMarkers()">
+                <li data-bind="html: $data.html, click: markerClick.bind(this, $data), attr: {class: ($data.filter === currentFilter() || currentFilter() === 'All') ? '' : ' hidden'}"></li>
             </ul>
-            <ul id="foursq" data-bind="html: locationInfo()"></ul>
+
         </section>
+
     </div>
     <script src="js/knockout-3.4.0.js"></script>
     <script src="js/jquery-3.1.1.min.js"></script>
